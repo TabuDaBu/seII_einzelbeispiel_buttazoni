@@ -12,8 +12,12 @@ class LeaderboardController(
     private val gameResultService: GameResultService
 ) {
 
+//    @GetMapping
+//    fun getLeaderboard(): List<GameResult> =
+//        gameResultService.getGameResults().sortedWith(compareBy({ -it.score }, { it.id }))
+
     @GetMapping
     fun getLeaderboard(): List<GameResult> =
-        gameResultService.getGameResults().sortedWith(compareBy({ -it.score }, { it.id }))
+        gameResultService.getGameResults().sortedWith(compareBy({ -it.score }, { it.timeInSeconds }))
 
 }
