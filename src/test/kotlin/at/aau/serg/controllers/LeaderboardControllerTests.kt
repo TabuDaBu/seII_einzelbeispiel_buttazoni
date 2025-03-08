@@ -43,7 +43,7 @@ class LeaderboardControllerTests {
         val second = GameResult(2, "second", 20, 10.0)
         val third = GameResult(3, "third", 20, 15.0)
 
-      whenever(mockedService.getGameResults()).thenReturn(listOf(second, first, third))
+//      whenever(mockedService.getGameResults()).thenReturn(listOf(second, first, third))
         whenever(mockedService.getGameResults()).thenReturn(listOf(first, second, third))
         val res: List<GameResult> = controller.getLeaderboard()
 
